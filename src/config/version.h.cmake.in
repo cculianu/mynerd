@@ -1,0 +1,17 @@
+// Copyright (c) 2023 The Bitcoin developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#pragma once
+
+#define PROG_VERSION_MAJOR ${PROG_VERSION_MAJOR}
+#define PROG_VERSION_MINOR ${PROG_VERSION_MINOR}
+#define PROG_VERSION_REVISION ${PROG_VERSION_REVISION}
+#define VERSION_STR_HELPER_2(x) #x
+#define VERSION_STR_HELPER_1(x) VERSION_STR_HELPER_2(x)
+#define PROG_VERSION_STR \
+    VERSION_STR_HELPER_1(PROG_VERSION_MAJOR) \
+    "." VERSION_STR_HELPER_1(PROG_VERSION_MINOR) \
+    "." VERSION_STR_HELPER_1(PROG_VERSION_REVISION)
+#define PROG_NAME_STR VERSION_STR_HELPER_2(${PACKAGE_NAME})
+#cmakedefine01 VERSION_IS_RELEASE
