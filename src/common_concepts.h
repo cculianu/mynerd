@@ -1,8 +1,9 @@
 #pragma once
 
 #include <concepts>
-#include <vector>
+#include <cstdint>
 #include <span>
+#include <vector>
 
 
 /// A byte blob such as a std::span<uint8_t> or a std::vector<uint8_t>
