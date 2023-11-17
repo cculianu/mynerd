@@ -408,7 +408,7 @@ bool SocketSetKeepAlive(const int sockfd, const bool bkeepalive,
         return false;
 #endif /* __APPLE_CC__ */
 #else /* WIN32 */
-    struct tcp_keepalive vals{0};
+    struct tcp_keepalive vals = {};
     vals.onoff = keepalive;
     vals.keepalivetime = tcp_keepidle * 1000;
     vals.keepaliveinterval = tcp_keepintvl * 1000;
