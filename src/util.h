@@ -250,7 +250,7 @@ struct SBuf {
         if (slen + len > MaxLen)
             slen = long(MaxLen) - len;
         if (slen <= 0) return *this;
-        std::strncpy(strBuf.data() + len, s, slen);
+        std::memcpy(strBuf.data() + len, s, slen);
         len += slen;
         strBuf[len] = 0;
         return *this;
